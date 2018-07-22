@@ -1,9 +1,17 @@
 
 <div class="container">
     <div class="card">
-        <?php $id['id'] = $this->session->userdata('id'); ?>
         
+       <?php if($this->session->flashdata('success')!=null):?>
+            
+            <div class="alert alert-info">
+                <?php echo $this->session->flashdata('success'); ?>
+            </div>
+            <?php endif?>
         <div class="card-body">
+            <?php $id['id'] = $this->session->userdata('id'); ?>
+        
+            
             <h3 class="card-title">What's on your mind?</h3>
             <form action="<?= base_url('admin/SecurityController/status/') ?>" method="post">
                 <div class="form-group">                  
@@ -28,10 +36,14 @@
         <?php foreach ($status as $new_status): ?>
 
             <div class="card">
-                <h1 class="card-title"><a href=""><?php echo $new_status->user_name; ?></a></h1>
+                <h1 class="card-title"><a href="<?= base_url('admin/profiles/other_user_profile/'.$new_status->user_id)?>"><?php echo $new_status->user_name; ?></a></h1>
                 <div class="card-body">
                     <?php echo $new_status->status; ?>
                 </div>
+                <hr>
+                <button class="btn-sm btn-warning"><i class="fal fa-thumbs-up"></i></button>
+                <button class="btn-sm btn-warning"><i class="far fa-comment"></i></button>
+                
             </div>
 
         <?php endforeach; ?>

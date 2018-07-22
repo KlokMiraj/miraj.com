@@ -10,7 +10,7 @@
     <div class="panel">
         <div class="row">
             <div class="col-md-6">
-                User Image   
+                <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="userimage" width="50%" height="50%">  
             </div>
             <div class="col-md-6">
 <?php foreach ($res as $res): ?>
@@ -28,26 +28,38 @@
                             <h3>Phone:</h3>
                             <p><i><?php echo $res->phone; ?></i></p>
                         </div>
+                        <?php if ($res->role == 2):?>
                         <div class="row">
                             <h3>Signed in as </h3>
                             <p><i><?php if ($res->role == 2): echo "Artist";
     elseif ($res->role == 3):echo "Listener";
     endif; ?></i></p>
                         </div>
+                        <?php endif;?>
                     </div>
                 <?php endforeach; ?>
                 
             </div>
             <div class="row">
+                 <?php if($this->session->userdata('id')!=$res->id):?>
+            <div class="row">
+                
                     <div class="col-sm-6">
                         
                     </div>
                     <div class="col-sm-6">
+                        <button class="btn btn-primary" href=""><i class="fab fa-twitter">Follow</i></button>
+                 </div>
+                <?php endif;?>
                         <?php if ($this->session->userdata('id') == $res->id): ?>
                             <button href="" class="btn btn-primary">Edit Profile</button>
                         <?php endif; ?>
                     </div>
                 </div>
+            
+            
+               
+           
         </div>
 
     </div>

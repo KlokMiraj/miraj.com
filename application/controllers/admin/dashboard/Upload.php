@@ -14,4 +14,11 @@ Class Upload extends ADMIN_Controller{
         $this->load->view(BACKEND,$data);
     }
     
+    public function listfile(){
+        $data['role_title']=$this->get_role_name();
+        $data['title']="Uploaded Files";
+        $data['main_page']='admin/dashboard/artist/file_list';
+        $this->load->view(BACKEND,$data);
+    }
+    
 }

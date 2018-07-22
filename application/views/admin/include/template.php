@@ -6,11 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS-->
         <link rel="stylesheet" type="text/css" href="<?= base_url('assets/admin/') ?>css/main.css">
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/') ?>fymucss.css">
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/') ?>datatables.css">
+       
+        
         <!-- bootstrap-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <!-- jquery -->
-
-
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+        <!-- jquery form validation-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <title>Find Your Music</title>
         <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries-->
         <!--if lt IE 9
@@ -78,6 +82,16 @@
                 ?>
 
                 <div class="row">
+                    <?php if($this->session->flashdata()!= null) :?>
+                    <div class="row">
+                    <div class="alert alert-success">
+                        <div class="col-md-6">
+                           
+                            <h3>Welcome <strong> <?php echo $this->session->userdata('name')?></strong></h3>
+                        </div>
+                        </div>
+                    </div>
+                    <?php endif;?>
                     <?php if (isset($main_page)): ?>
                         <?php $this->load->view($main_page,$res); ?>
 <?php endif; ?>
@@ -90,11 +104,12 @@
         <script src="<?= base_url('assets/admin/') ?>js/bootstrap.min.js"></script>
         <script src="<?= base_url('assets/admin/') ?>js/plugins/pace.min.js"></script>
         <script src="<?= base_url('assets/admin/') ?>js/main.js"></script>
+          <script type="text/javascript" src="<?= base_url('assets/') ?>datatables.js"></script>
         <script type="text/javascript" src="<?= base_url('assets/admin/') ?>js/plugins/chart.js"></script>
-        <script type="text/javascript" src="<?= base_url('assets/admin/') ?>js/plugins/jquery.vmap.min.js"></script>
-        <script type="text/javascript" src="<?= base_url('assets/admin/') ?>js/plugins/jquery.vmap.world.js"></script>
-        <script type="text/javascript" src="<?= base_url('assets/admin/') ?>js/plugins/jquery.vmap.sampledata.js"></script>
-        <script type="text/javascript">
+        <script type="text/javascript" src="<?= base_url('assets/') ?>fymuploadjs.js"></script>
+      
+
+         <script type="text/javascript">
             $(document).ready(function () {
                 var data = {
                     labels: ["January", "February", "March", "April", "May"],

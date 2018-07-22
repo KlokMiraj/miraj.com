@@ -8,6 +8,9 @@
         <link rel="stylesheet" type="text/css" href="<?= base_url('assets/admin/') ?>css/main.css">
         <link rel="stylesheet" type="text/css" href="<?= base_url('assets/admin/') ?>css/sub_main.css">
         <title>Find Your Music</title>
+
+        <!--Form validator-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
         <!--if lt IE 9
         script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
@@ -33,27 +36,31 @@
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="inputEmail">Name</label>
                                                     <div class="col-lg-10">
-                                                        <input class="form-control" id="inputEmail" name="name" type="text" placeholder="Name">
+                                                        <input class="form-control" id="inputEmail" name="name" type="text" placeholder="Name" max="9" min="5">
+                                                        <div><?php echo form_error('name');?></div>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="inputEmail">Email</label>
                                                     <div class="col-lg-10">
-                                                        <input class="form-control" id="inputEmail" name="email" type="email" placeholder="Email">
+                                                        <input class="form-control" id="inputEmail" name="email" type="email" placeholder="Email" max="15" min="5" required>
+                                                         <div><?php echo form_error('email');?></div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="inputEmail">Phone</label>
                                                     <div class="col-lg-10">
                                                         <input class="form-control" id="inputEmail" name="phone" type="tel" placeholder="Phone">
+                                                         <div><?php echo form_error('phone');?></div>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="inputPassword">Password</label>
                                                     <div class="col-lg-10">
-                                                        <input class="form-control" name="password" id="inputPassword" type="password" placeholder="Password">
+                                                        <input class="form-control" name="password" id="inputPassword" type="password" placeholder="Password" min="8" required>
+                                                         <div><?php echo form_error('password');?></div>
                                                     </div>
                                                 </div>
 
@@ -80,7 +87,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <a href="<?= base_url('admin') ?>">Already have an account?</a>
+                                                    <a href="<?= base_url('admin/SecurityController') ?>">Already have an account?</a>
                                                 </div>
                                             </fieldset>
 
@@ -95,10 +102,16 @@
             </div>
         </div>
         <!-- Javascripts-->
-        <script src="<?= base_url('assets/admin/') ?>js/jquery-2.1.4.min.js"></script>
+
         <script src="<?= base_url('assets/admin/') ?>js/essential-plugins.js"></script>
         <script src="<?= base_url('assets/admin/') ?>js/bootstrap.min.js"></script>
         <script src="<?= base_url('assets/admin/') ?>js/plugins/pace.min.js"></script>
         <script src="<?= base_url('assets/admin/') ?>js/main.js"></script>
+
+        <script>
+            name
+            email
+            phone
+        </script>
     </body>
 </html>

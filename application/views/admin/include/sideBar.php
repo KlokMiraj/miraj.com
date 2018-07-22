@@ -36,18 +36,23 @@ if
 
                 <li class="treeview"><a href="#"><i class="fa fa-share"></i><span>File Dashboard</span><i class="fa fa-angle-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href = "#"><i class = "fa fa-circle-o">View Upload Lists</a>
-                        <li><a href = "<?= base_url('admin/dashboard/Upload')?>"><i class = "fa fa-circle-o">Upload Your Work</a>
+                        <li><a href = "<?= base_url('admin/dashboard/upload/listfile')?>"><i class = "fa fa-circle-o">View Upload Lists</a>
+                        <li><a href = "<?= base_url('admin/dashboard/upload')?>"><i class = "fa fa-circle-o">Upload Your Work</a>
                     </ul>
                 </li>
+               
+                    
+              
             <?php elseif ($user == 1): ?> 
                 <li class="treeview"><a href="#"><i class="fa fa-share"></i><span>File Dashboard</span><i class="fa fa-angle-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o">Download Portal</a>
+                        <li><a href="<?= base_url('admin/dashboard/download')?>"><i class="fa fa-circle-o">Download Portal</a>
                         <li class="treeview"><a href="#"><i class="fa fa-circle-o"></i><span>Playlist</span><i class="fa fa-angle-right"></i></a>
                     </ul>  
                 </li>
             <?php endif; ?>
+                
         </ul>
+       
     </section>
 </aside>

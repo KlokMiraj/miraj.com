@@ -86,7 +86,7 @@
 
                         <div class="form-group col-md-9">
                             <div id="imageUpload">
-                                <div class="btn btn-sm btn-primary pull-right" onclick="appendImage()">Add Another Image</div>
+                                <div class="btn btn-sm btn-primary pull-right" onclick="appendImage()">Add Another File</div>
                                 <label>Choose File</label>
                                 <?php if(isset($media)){ ?>
                                     <?php foreach ($media as $m){ ?>
@@ -168,37 +168,14 @@
                 </div>
 
 
-                
+               
 
-<!--                <div class="box-body">
-                    <div class="col-md-12">
-                        <div class="form-group col-md-12">
-                            <label>Meta Title</label>
-                            <input type="text" name="meta_tite" placeholder="Meta Title" class="form-control" value="<?php if($is_update == TRUE ){ echo $product->meta_tite; }else{ echo set_value('meta_tite'); } ?>">
-                            <?php echo form_error('meta_tite')?>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group col-md-12">
-                            <label>Meta Keyword</label>
-                            <textarea class="form-control" name="meta_keyword" placeholder="Meta Keyword"><?php if($is_update == TRUE ){ echo $product->meta_keyword; }else{ echo set_value('meta_keyword'); } ?></textarea>
-                            <?php echo form_error('meta_keyword')?>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group col-md-12">
-                            <label>Meta Description</label>
-                            <textarea class="form-control" name="meta_description" rows="3" placeholder="Meta Description"><?php if($is_update == TRUE ){ echo $product->meta_description; }else{ echo set_value('meta_description'); } ?></textarea>
-                            <?php echo form_error('meta_description')?>
-                        </div>
-                    </div>
-                </div>-->
-
-                <div class="box-body">
+               <div class="box-body">
                     <div class="box-footer pull-right">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
+              
             </form>
         </div>
         <!-- /.box -->

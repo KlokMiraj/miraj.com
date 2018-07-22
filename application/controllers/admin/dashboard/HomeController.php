@@ -2,7 +2,7 @@
 /**
  * Description of homeController
  *
- * @author dines
+ * @author dumb
  */
 class HomeController extends ADMIN_Controller {
     
